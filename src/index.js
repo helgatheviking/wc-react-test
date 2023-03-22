@@ -7,11 +7,13 @@
  */
 import './style.scss';
 
-import { createRoot } from '@wordpress/element';
+// WP 6.2 aka React 18 Approach.
+//import { createRoot } from '@wordpress/element';
+//const target = document.getElementById('app-root');
+//const root = render( target, target );
+//root.render(<h3>React SUCKS</h3>);
 
-console.debug("createRoot", createRoot);
-
+// WP 6.1 aka React 17 Approach.
+import { render } from '@wordpress/element';
 const target = document.getElementById('app-root');
-const root = createRoot( target );
-
-root.render(<h3>React SUCKS</h3>);
+render( <h3>React SUCKS</h3>, target );
