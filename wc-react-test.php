@@ -22,9 +22,9 @@ add_action( 'woocommerce_before_add_to_cart_form', 'kia_add_app_root_to_product'
 
 function kia_register_scripts() {
 
-	$script_url  = plugin_dir_url( __FILE__ ) . '/build/index.js';
+	$script_url  = untrailingslashit( plugin_dir_url( __FILE__ ) ) . '/build/index.js';
 
-    $script_asset_path = plugin_dir_path( __FILE__ ) . '/build/index.asset.php';
+    $script_asset_path = untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/build/index.asset.php';
 
     $script_asset      = file_exists( $script_asset_path )
         ? require $script_asset_path
