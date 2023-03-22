@@ -10,3 +10,8 @@ import './style.scss';
 import { createRoot } from '@wordpress/element';
 
 console.debug("createRoot", createRoot);
+
+const target = document.getElementById('app-root');
+const root = createRoot( target );
+
+root.render(<h3>React SUCKS</h3>);
