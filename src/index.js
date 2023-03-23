@@ -7,13 +7,12 @@
  */
 import './style.scss';
 
-// WP 6.2 aka React 18 Approach.
-//import { createRoot } from '@wordpress/element';
-//const target = document.getElementById('app-root');
-//const root = render( target, target );
-//root.render(<h3>React SUCKS</h3>);
+import { createRoot, render } from '@wordpress/element';
 
-// WP 6.1 aka React 17 Approach.
-import { render } from '@wordpress/element';
-const target = document.getElementById('app-root');
-render( <h3>React SUCKS</h3>, target );
+// React 18 uses createRoot, but is not available until WordPress 6.2 so test if import is undefined.
+if ( createRoot ) {
+    createRoot( target ).render( <h3>React SUCKS</h3> );
+} else {
+    render( <h3>React SUCKS</h3>, target );
+}
+
